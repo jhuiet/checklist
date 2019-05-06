@@ -1,0 +1,17 @@
+<div class="container content">
+  <div class="row">
+    <div class="col-md-12">
+      <app-task-item
+        *ngFor="let task of tasks; let i = index"
+        [task]="task"
+        [index]="i"
+        (click)="setIndex(i)"
+      >
+      </app-task-item>
+
+      <button type="button" class="btn btn-success mt-3" (click)="newTask()">
+        Add Task
+      </button>
+    </div>
+  </div>
+</div>
