@@ -64,4 +64,9 @@ export class EditTaskComponent implements OnInit {
     }
     this.onCancel();
   }
+
+  onDelete() {
+    this.checkListService.deleteTask(this.id);
+    this.onCancel();
+  }
 }

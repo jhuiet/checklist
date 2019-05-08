@@ -1,8 +1,10 @@
-<div class="container content">
-  <div class="row">
-    <div class="col-md-12">
+<div class="container">
+    <label for="searching"> Search</label>
+    <input class="mb-3 ml-3" name="searching" [(ngModel)]="searchText" placeholder="search text goes here">
+
+
       <app-task-item
-        *ngFor="let task of tasks; let i = index"
+        *ngFor="let task of tasks | filter: searchText; let i = index"
         [task]="task"
         [index]="i"
         (click)="setIndex(i)"
@@ -12,6 +14,4 @@
       <button type="button" class="btn btn-success mt-3" (click)="newTask()">
         Add Task
       </button>
-    </div>
-  </div>
 </div>

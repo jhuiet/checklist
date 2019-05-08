@@ -1,57 +1,42 @@
-<div class="row">
-  <div class="col">
-    <form [formGroup]="taskForm" (ngSubmit)="submit()">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="form">
-            <label for="title">Task Name</label>
-            <input
-              class="form-control"
-              name="title"
-              type="text"
-              formControlName="title"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="form-group">
-            <label for="desc">Description</label>
-            <input
-              class="form-control"
-              name="desc"
-              type="text"
-              formControlName="description"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="form-group">
-            <label for="date">Date</label>
-            <!-- <input
+<div>
+  <form [formGroup]="taskForm" (ngSubmit)="submit()">
+    <label for="title">Task Name</label>
+    <input
+      class="form-control"
+      name="title"
+      type="text"
+      formControlName="title"
+    />
+    <label for="desc">Description</label>
+    <input
+      class="form-control"
+      name="desc"
+      type="text"
+      formControlName="description"
+    />
+    <label for="date">Date</label>
+    <!-- <input
               class="form-control"
               type="datepicker"
               name="date"
               formControlName="date"
             /> -->
 
-            <input [matDatepicker]="myDatepicker" formControlName="date" name="date">
+    <!-- <input [matDatepicker]="myDatepicker" formControlName="date" name="date">
             <mat-datepicker-toggle [for]="myDatepicker"></mat-datepicker-toggle>
-            <mat-datepicker #myDatepicker></mat-datepicker>
+            <mat-datepicker #myDatepicker></mat-datepicker> -->
 
-            <!-- <input [matDatepicker]="myDatepicker" formControlName="date" name="date">
-            <mat-datepicker-toggle [for]="myDatepicker"></mat-datepicker-toggle>
-            <mat-datepicker #myDatepicker></mat-datepicker>
-          </div>
-        </div>
-      </div>
-      <button class="btn btn-primary">Submit</button>
-      <button type="button" class="btn btn-danger" (click)="onCancel()">
+    <input [matDatepicker]="myDatepicker" formControlName="date" name="date" />
+    <mat-datepicker #myDatepicker></mat-datepicker>
+
+    <button class="btn btn-primary">Submit</button>
+    <button type="button" class="btn btn-primary" (click)="onCancel()">
+      Cancel
+    </button>
+    <div *ngIf="editMode">
+      <button type="button" class="btn btn-danger" (click)="onDelete()">
         Cancel
       </button>
-    </form>
-  </div>
+    </div>
+  </form>
 </div>

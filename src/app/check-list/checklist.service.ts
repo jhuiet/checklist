@@ -6,7 +6,11 @@ import { TaskModel } from './check-detail/Task.model';
 @Injectable()
 export class CheckListService {
   tasks: TaskModel[] = [
-    new TaskModel('title', 'the desc', new Date())
+    new TaskModel('title', 'the desc', new Date()),
+    new TaskModel('titleaoeu', 'the descgcwgcwg', new Date()),
+    new TaskModel('titlepuihd', 'tghgcwgcte desc', new Date()),
+    new TaskModel('titlegcwgcw', 'the description', new Date()),
+
   ];
   currentViewedTask: number;
   tasksUpdated = new Subject<TaskModel[]>();
@@ -16,10 +20,6 @@ export class CheckListService {
   }
 
   getTask(id: number) {
-    console.log('get tasks called');
-    console.log(id);
-    console.log(this.tasks[id]);
-    console.log('get tasks returning');
     return this.tasks[id];
   }
 
