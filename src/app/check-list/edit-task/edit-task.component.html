@@ -1,4 +1,4 @@
-<div>
+<div class="mt-4">
   <form [formGroup]="taskForm" (ngSubmit)="submit()">
     <label for="title">Task Name</label>
     <input
@@ -15,27 +15,28 @@
       formControlName="description"
     />
     <label for="date">Date</label>
-    <!-- <input
+     <input
               class="form-control"
-              type="datepicker"
+              type="date"
               name="date"
               formControlName="date"
-            /> -->
-
-    <!-- <input [matDatepicker]="myDatepicker" formControlName="date" name="date">
+            />
+<!--
+    <input [matDatepicker]="myDatepicker" formControlName="date" name="date">
             <mat-datepicker-toggle [for]="myDatepicker"></mat-datepicker-toggle>
             <mat-datepicker #myDatepicker></mat-datepicker> -->
 
-    <input [matDatepicker]="myDatepicker" formControlName="date" name="date" />
-    <mat-datepicker #myDatepicker></mat-datepicker>
+    <!-- <input [matDatepicker]="myDatepicker" formControlName="date" name="date" />
+    <mat-datepicker #myDatepicker></mat-datepicker> -->
 
-    <button class="btn btn-primary">Submit</button>
-    <button type="button" class="btn btn-primary" (click)="onCancel()">
+    <button class="btn btn-primary mt-2">Submit</button>
+    <button type="button" class="btn btn-success ml-2 mt-2" (click)="onCancel()">
       Cancel
     </button>
+    <br><br>
     <div *ngIf="editMode">
       <button type="button" class="btn btn-danger" (click)="onDelete()">
-        Cancel
+        Delete
       </button>
     </div>
   </form>
